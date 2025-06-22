@@ -1,0 +1,9 @@
+<h1>Next Topper - Science - Physics</h1>
+<% if (content.length === 0) { %>
+  <p>No content yet.</p>
+<% } %>
+<% content.forEach(item => { %>
+  <h2><%= item.title %></h2>
+  <p><%= item.description %></p>
+  <a href="<%= item.link %>" target="_blank">View Resource</a>
+<% }) %>
