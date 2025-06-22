@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1 class="neon-text">Admin - Add Content</h1>
+  <form action="/admin/add" method="POST">
+    <input type="text" name="title" placeholder="Title" required><br>
+    <textarea name="description" placeholder="Description" required></textarea><br>
+    <input type="url" name="link" placeholder="PDF/Video Link" required><br>
+
+    <select name="category" required>
+      <option value="math">Math</option>
+      <option value="science">Science</option>
+      <option value="s_st">S.St</option>
+    </select><br>
+
+    <select name="subcategory" required>
+      <option value="algebra">Algebra</option>
+      <option value="geometry">Geometry</option>
+      <option value="physics">Physics</option>
+      <option value="chemistry">Chemistry</option>
+      <option value="bio">Biology</option>
+      <option value="history">History</option>
+      <option value="geography">Geography</option>
+      <option value="civics">Civics</option>
+      <option value="eco">Economics</option>
+    </select><br>
+
+    <button type="submit">Add Content</button>
+  </form>
+</body>
+</html>
