@@ -24,7 +24,7 @@ router.get('/math/:topic', (req, res) => {
 });
 
 // Dynamic routes for science
-router.get('/science/:topic', (req, res) => {
+router.get('views/next topper/science/:topic', (req, res) => {
   const data = loadContent();
   const topic = req.params.topic;
   const content = data.science?.[topic] || [];
