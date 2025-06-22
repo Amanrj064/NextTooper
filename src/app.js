@@ -1,4 +1,32 @@
 const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.set('view engine', 'ejs');
+app.use('/videos', express.static(__dirname + '/videos'));
+app.use(express.static(__dirname + '/public'));
+
+const videos = [
+  { title: 'Physics Intro', url: '/videos/physics.mp4' },
+  { title: 'Chemistry Basics', url: '/videos/chemistry.mp4' }
+];
+
+app.get('/', (req, res) => {
+  res.redirect('/nexttopper');
+});
+
+app.get('/nexttopper', (req, res) => {
+  res.render('NextTopper', { videos });
+});
+
+app.get('/admin', (req, res) => {
+  res.render('admin');
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
