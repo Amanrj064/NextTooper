@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uploaded Contents</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1 class="neon-text">Uploaded Contents</h1>
+
+  <% if (contents.length === 0) { %>
+    <p class="neon-text">No content added yet.</p>
+  <% } else { %>
+    <% contents.forEach(item => { %>
+      <div class="content-card">
+        <h2><%= item.title %></h2>
+        <p><%= item.description %></p>
+        <p>Category: <%= item.category %> / <%= item.subcategory %></p>
+
+        <% if (item.link.endsWith('.mp4')) { %>
+          <video controls width="480">
+            <source src="<%= item.link %>" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        <% } else { %>
+          <a href="<%= item.link %>" target="_blank">View PDF</a>
+        <% } %>
+      </div>
+    <% }) %>
+  <% } %>
+</body>
+</html>
